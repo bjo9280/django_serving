@@ -1,0 +1,32 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}?ver=2">
+    <title>blog</title>
+</head>
+<body>
+    <div class="header">
+        <a class="home" href="/"><h1>Blog!</h1></a>
+        <a class="add-post" href="{% url 'post_add' %}">
+            <button type="button" class="btn btn-info">Add Post</button>
+        </a>
+        <a class="serving" href="{% url 'serving_half_plus_two' %}">
+            <button type="button" class="btn btn">half_plus_two</button>
+        </a>
+    </div>
+    {% block content %}
+    <div class="container">
+        <h1>글이 삭제되었습니다.</h1>
+        <a href="/">
+            <button type="button" class="btn btn-primary to-main">To Main</button>
+        </a>
+    </div>
+    {% endblock %}
+</body>
+</html>
